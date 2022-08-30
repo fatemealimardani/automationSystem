@@ -6,10 +6,7 @@ import lombok.Setter;
 import model.entity.base.BaseEntity;
 import model.entity.enumrations.SocialMediaType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter

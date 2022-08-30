@@ -1,27 +1,27 @@
 package model.repository;
 
 import connection.SessionFactorySingleton;
-import model.entity.Person;
+import model.entity.Attachment;
 import model.repository.genericCRUD.CRUDRepository;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class PersonRepository extends CRUDRepository<Person, Integer> {
+public class AttachmentRepository extends CRUDRepository<Attachment, Integer> {
     private final SessionFactory sessionFactory = SessionFactorySingleton.getInstance();
 
-    public Person findById(Integer id) {
+    public Attachment findById(Integer id) {
         var session = sessionFactory.getCurrentSession();
         return session
-                .createQuery("from Person as p where p.id = :id", Person.class)
+                .createQuery("from Attachment as a where a.id = :id", Attachment.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
-    public List<Person> findAll() {
+    public List<Attachment> findAll() {
         var session = sessionFactory.getCurrentSession();
         return session
-                .createQuery("from Person  as p", Person.class)
+                .createQuery("from Attachment as a", Attachment.class)
                 .list();
     }
 }

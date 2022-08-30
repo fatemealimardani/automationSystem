@@ -1,27 +1,26 @@
 package model.repository;
 
 import connection.SessionFactorySingleton;
-import model.entity.Person;
-import model.repository.genericCRUD.CRUDRepository;
+import model.entity.PersonSponsoredStatus;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class PersonRepository extends CRUDRepository<Person, Integer> {
+public class PersonSponsoredStatusRepository {
     private final SessionFactory sessionFactory = SessionFactorySingleton.getInstance();
 
-    public Person findById(Integer id) {
+    public PersonSponsoredStatus findById(Integer id) {
         var session = sessionFactory.getCurrentSession();
         return session
-                .createQuery("from Person as p where p.id = :id", Person.class)
+                .createQuery("from PersonSponsoredStatus as p where p.id = :id", PersonSponsoredStatus.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
-    public List<Person> findAll() {
+    public List<PersonSponsoredStatus> findAll() {
         var session = sessionFactory.getCurrentSession();
         return session
-                .createQuery("from Person  as p", Person.class)
+                .createQuery("from PersonSponsoredStatus as p", PersonSponsoredStatus.class)
                 .list();
     }
 }
