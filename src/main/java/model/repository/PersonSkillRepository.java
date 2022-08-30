@@ -2,7 +2,7 @@ package model.repository;
 
 import connection.SessionFactorySingleton;
 import model.entity.PersonSkill;
-import model.repository.genericCRUD.CRUDRepository;
+import model.repository.genericCRUDRepository.CRUDRepository;
 import org.hibernate.SessionFactory;
 
 import java.util.List;

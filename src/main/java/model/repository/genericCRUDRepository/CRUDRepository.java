@@ -1,4 +1,4 @@
-package model.repository.genericCRUD;
+package model.repository.genericCRUDRepository;
 
 import connection.SessionFactorySingleton;
 import model.entity.base.BaseEntity;
